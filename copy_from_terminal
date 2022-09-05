@@ -28,11 +28,19 @@ luana@LAPTOP-P8A7ACTH MINGW64 ~/IH-Labs/lab-bash (master)
 $ cd lorem
 
 luana@LAPTOP-P8A7ACTH MINGW64 ~/IH-Labs/lab-bash/lorem (master)
+$ cp sed lorem-copy
+cp: cannot stat 'sed': No such file or directory
+
+luana@LAPTOP-P8A7ACTH MINGW64 ~/IH-Labs/lab-bash/lorem (master)
 $ ls
 at.txt  at.txte  lorem.txt  sed.txt
 
 luana@LAPTOP-P8A7ACTH MINGW64 ~/IH-Labs/lab-bash/lorem (master)
 $ cp sed.txt lorem-copy
+
+luana@LAPTOP-P8A7ACTH MINGW64 ~/IH-Labs/lab-bash/lorem (master)
+$ cd..
+bash: cd..: command not found
 
 luana@LAPTOP-P8A7ACTH MINGW64 ~/IH-Labs/lab-bash/lorem (master)
 $ cd ..
@@ -70,6 +78,9 @@ $ cp at.txt lorem-copy ; lorem.txt lorem-copy
 bash: lorem.txt: command not found
 
 luana@LAPTOP-P8A7ACTH MINGW64 ~/IH-Labs/lab-bash/lorem (master)
+$ ^C
+
+luana@LAPTOP-P8A7ACTH MINGW64 ~/IH-Labs/lab-bash/lorem (master)
 $ cp at.txt lorem-copy ; cp lorem.xt lorem-copy
 cp: cannot stat 'lorem.xt': No such file or directory
 
@@ -99,6 +110,11 @@ $ cd lorem
 luana@LAPTOP-P8A7ACTH MINGW64 ~/IH-Labs/lab-bash/lorem (master)
 $ ls
 at.txt  at.txte  lorem-copy  lorem.txt  sed.txt
+
+luana@LAPTOP-P8A7ACTH MINGW64 ~/IH-Labs/lab-bash/lorem (master)
+$ cp sed.txt
+cp: missing destination file operand after 'sed.txt'
+Try 'cp --help' for more information.
 
 luana@LAPTOP-P8A7ACTH MINGW64 ~/IH-Labs/lab-bash/lorem (master)
 $ cd ..
@@ -167,6 +183,9 @@ $ ls
 dummy_file.txt  sed.txt
 
 luana@LAPTOP-P8A7ACTH MINGW64 ~/IH-Labs/lab-bash/lorem-copy (master)
+$ ^C
+
+luana@LAPTOP-P8A7ACTH MINGW64 ~/IH-Labs/lab-bash/lorem-copy (master)
 $ cd ..
 
 luana@LAPTOP-P8A7ACTH MINGW64 ~/IH-Labs/lab-bash (master)
@@ -233,6 +252,19 @@ luana@LAPTOP-P8A7ACTH MINGW64 ~/IH-Labs/lab-bash/lorem-copy (master)
 $ echo 'Homo homini lupus .' >> sed.txt
 
 luana@LAPTOP-P8A7ACTH MINGW64 ~/IH-Labs/lab-bash/lorem-copy (master)
+$ cat sed.txt
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
+sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
+sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam,
+nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur,
+vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?Homo homini lupus
+Homo homini lupus .
+
+luana@LAPTOP-P8A7ACTH MINGW64 ~/IH-Labs/lab-bash/lorem-copy (master)
 $ tail -3 sed.txt
 nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur,
 vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?Homo homini lupus
@@ -240,6 +272,18 @@ Homo homini lupus .
 
 luana@LAPTOP-P8A7ACTH MINGW64 ~/IH-Labs/lab-bash/lorem-copy (master)
 $ cd ..\\lorem
+
+luana@LAPTOP-P8A7ACTH MINGW64 ~/IH-Labs/lab-bash/lorem (master)
+$ cat sed.txt
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
+sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
+sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam,
+nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur,
+vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?Homo homini lupus
 
 luana@LAPTOP-P8A7ACTH MINGW64 ~/IH-Labs/lab-bash/lorem (master)
 $ cat at.txt
@@ -279,12 +323,25 @@ $ pwd
 /c/Users/luana/IH-Labs/lab-bash/lorem
 
 luana@LAPTOP-P8A7ACTH MINGW64 ~/IH-Labs/lab-bash/lorem (master)
+$ ls \b *.txt
+ls: cannot access 'b': No such file or directory
+at.txt  lorem.txt  sed.txt
+
+luana@LAPTOP-P8A7ACTH MINGW64 ~/IH-Labs/lab-bash/lorem (master)
 $ ls *.txt
 at.txt  lorem.txt  sed.txt
 
 luana@LAPTOP-P8A7ACTH MINGW64 ~/IH-Labs/lab-bash/lorem (master)
+$ cat sed.txt | wc -l sed.txt
+9 sed.txt
+
+luana@LAPTOP-P8A7ACTH MINGW64 ~/IH-Labs/lab-bash/lorem (master)
 $ cat sed.txt | wc -l
 9
+
+luana@LAPTOP-P8A7ACTH MINGW64 ~/IH-Labs/lab-bash/lorem (master)
+$ ls *.txt | wc-1
+bash: wc-1: command not found
 
 luana@LAPTOP-P8A7ACTH MINGW64 ~/IH-Labs/lab-bash/lorem (master)
 $ ls *.txt | wc -l
@@ -294,8 +351,29 @@ luana@LAPTOP-P8A7ACTH MINGW64 ~/IH-Labs/lab-bash/lorem (master)
 $ cd ..
 
 luana@LAPTOP-P8A7ACTH MINGW64 ~/IH-Labs/lab-bash (master)
+$ ls -S *.txt | wc -l
+ls: cannot access '*.txt': No such file or directory
+0
+
+luana@LAPTOP-P8A7ACTH MINGW64 ~/IH-Labs/lab-bash (master)
 $ ls -S
 readme.md  exercices/  inputs/  lorem/  lorem-copy/  outputs/
+
+luana@LAPTOP-P8A7ACTH MINGW64 ~/IH-Labs/lab-bash (master)
+$ ls /S
+ls: cannot access '/S': No such file or directory
+
+luana@LAPTOP-P8A7ACTH MINGW64 ~/IH-Labs/lab-bash (master)
+$ ls -
+ls: cannot access '-': No such file or directory
+
+luana@LAPTOP-P8A7ACTH MINGW64 ~/IH-Labs/lab-bash (master)
+$ ls-
+bash: ls-: command not found
+
+luana@LAPTOP-P8A7ACTH MINGW64 ~/IH-Labs/lab-bash (master)
+$ ls /S
+ls: cannot access '/S': No such file or directory
 
 luana@LAPTOP-P8A7ACTH MINGW64 ~/IH-Labs/lab-bash (master)
 $ ls -la
@@ -328,6 +406,14 @@ total 12
 0 exercices/  0 inputs/  4 lorem/  4 lorem-copy/  0 outputs/  4 readme.md
 
 luana@LAPTOP-P8A7ACTH MINGW64 ~/IH-Labs/lab-bash (master)
+$ ls *.txt
+ls: cannot access '*.txt': No such file or directory
+
+luana@LAPTOP-P8A7ACTH MINGW64 ~/IH-Labs/lab-bash (master)
+$ ls '*.txt'
+ls: cannot access '*.txt': No such file or directory
+
+luana@LAPTOP-P8A7ACTH MINGW64 ~/IH-Labs/lab-bash (master)
 $ cd lorem
 
 luana@LAPTOP-P8A7ACTH MINGW64 ~/IH-Labs/lab-bash/lorem (master)
@@ -346,6 +432,10 @@ wc: lorem-copy: Is a directory
       0 total
 
 luana@LAPTOP-P8A7ACTH MINGW64 ~/IH-Labs/lab-bash (master)
+$ ls | wc-l lorem*
+bash: wc-l: command not found
+
+luana@LAPTOP-P8A7ACTH MINGW64 ~/IH-Labs/lab-bash (master)
 $ ls wc -l lorem*
 ls: cannot access 'wc': No such file or directory
 lorem:
@@ -361,6 +451,22 @@ total 10
 -rw-r--r-- 1 luana 197609  12 Sep  5 11:52 dummy_file.txt
 -rw-r--r-- 1 luana 197609 451 Sep  5 12:48 lorem.txt
 -rw-r--r-- 1 luana 197609 920 Sep  5 13:00 sed.txt
+
+luana@LAPTOP-P8A7ACTH MINGW64 ~/IH-Labs/lab-bash (master)
+$ ls | wc -l lorem*
+wc: lorem: Is a directory
+      0 lorem
+wc: lorem-copy: Is a directory
+      0 lorem-copy
+      0 total
+
+luana@LAPTOP-P8A7ACTH MINGW64 ~/IH-Labs/lab-bash (master)
+$ wc -l lorem*
+wc: lorem: Is a directory
+      0 lorem
+wc: lorem-copy: Is a directory
+      0 lorem-copy
+      0 total
 
 luana@LAPTOP-P8A7ACTH MINGW64 ~/IH-Labs/lab-bash (master)
 $ ls | wc -l lorem*
